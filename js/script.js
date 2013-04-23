@@ -135,7 +135,15 @@ AB.addView = Backbone.View.extend({
                 address: address
             });	
         }
-        contactmodel.save();
+//        contactmodel.save();
+        var contactCollection = localStorage['contacts'];
+        if (_.isUndefined(contactCollection)) {
+            contactCollection = [];
+        } else {
+            contactCollection = JSON.parse(contactCollection);
+        }
+        contactCollection.push(contactmodel);
+        localStorage['contacts'] = JSON.stringify(contactCollection);
         return false;
     }
 });
