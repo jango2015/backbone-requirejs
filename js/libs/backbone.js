@@ -5,6 +5,7 @@
 //     For all details and documentation:
 //     http://backbonejs.org
 
+define(['libs/underscore'], function () {
 (function(){
 
   // Initial Setup
@@ -1569,3 +1570,4 @@
   };
 
 }).call(this);
+});

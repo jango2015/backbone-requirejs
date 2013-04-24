@@ -3,17 +3,18 @@
 *  codef0rmer <amit.2006.it@gmail.com>
 *  http://amitgharat.wordpress.com/2012/06/23/writing-your-first-application-using-backbone-js/
 */
-var AB = {
-    run: function () {
-        this.addview = new this.addView();
-        this.listview = new this.listView();
-        this.searchview = new this.searchView();
-        this.contactscollection = new AB.contactsCollection();
-        this.router = new this.Router();
-        Backbone.history.start();
-        this.router.navigate('add_new_contact', {trigger: true});		
-    }
-};
+define('AB', ["libs/backbone"], function () {
+    AB = {
+        run: function () {
+            this.addview = new this.addView();
+            this.listview = new this.listView();
+            this.searchview = new this.searchView();
+            this.contactscollection = new AB.contactsCollection();
+            this.router = new this.Router();
+            Backbone.history.start();
+            this.router.navigate('add_new_contact', {trigger: true});
+        }
+    };
 
 AB.Router = Backbone.Router.extend({
     routes: {
@@ -224,7 +225,10 @@ AB.searchView = Backbone.View.extend({
         return false;
     }
 });
+});
 
-$(function () {
-    AB.run();
+require(['AB'], function() {
+    $(function () {
+        AB.run();
+    });
 });

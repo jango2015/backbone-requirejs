@@ -89,7 +89,15 @@ Addressbook
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.2.min.js"><\/script>')</script>
 
-<script src="js/plugins.js"></script>
-<script src="js/script.js"></script>
+<script data-main="js/script" src="js/require.js"></script>
+<script>
+    require.config({
+        baseUrl: "js",
+        paths: {
+            "some": "some/v1.0"
+        },
+        waitSeconds: 15
+    });
+</script>
 </body>
 </html>
