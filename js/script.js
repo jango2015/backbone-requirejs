@@ -3,7 +3,7 @@
 *  codef0rmer <amit.2006.it@gmail.com>
 *  http://amitgharat.wordpress.com/2012/06/23/writing-your-first-application-using-backbone-js/
 */
-define('AB', ["libs/backbone"], function () {
+define('AB', ['libs/backbone', 'libs/jquery'], function (b, jquery) {
     AB = {
         run: function () {
             this.addview = new this.addView();
