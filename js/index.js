@@ -1,11 +1,7 @@
 define('AB', ['requirements', 'app/routers/ABRouter', 'app/models/ABContactModel',
         'app/views/ABContactAddView', 'app/views/ABContactListView',
-        'app/views/ABContactSearchView'], function () {
+        'app/views/ABContactSearchView', 'app/models/ABContactCollection'], function () {
 
-    AB.contactsCollection = Backbone.Collection.extend({
-        model: AB.contactModel,
-        url: '../php/listContacts.php'
-    });
 });
 
 require(['AB'], function() {
