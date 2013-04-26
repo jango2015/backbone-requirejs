@@ -23,28 +23,17 @@ define(['requirements'], function () {
     },
 
     addContact: function (event) {
-        var full_name = $('#full_name').val(),
-            email = $('#email').val(),
-            phone = $('#phone').val(),
-            address = $('#address').val(),
-            id = $('#id').val();
+        var full_name = $('#full_name').val();
+        var email = $('#email').val();
+        var phone = $('#phone').val();
+        var address = $('#address').val();
 
-        if (id === '') {
             var contactmodel = new AB.contactModel({
                 full_name: full_name,
                 email: email,
                 phone: phone,
                 address: address
             });
-        } else {
-            var contactmodel = new AB.contactModel({
-                id: id,
-                full_name: full_name,
-                email: email,
-                phone: phone,
-                address: address
-            });
-        }
         //        contactmodel.save();
         var contactCollection = localStorage['contacts'];
         if (_.isUndefined(contactCollection)) {

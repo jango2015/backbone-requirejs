@@ -1,43 +1,47 @@
 define(['requirements'], function () {
     AB.contactModel = Backbone.Model.extend({
-        sync: function (method, model, options) {
-            if (method === 'create' || method === 'update') {
-                return $.ajax({
-                    dataType: 'json',
-                    url: '../php/addNewContact.php',
-                    data: {
-                        id: (this.get('id') || ''),
-                        full_name: (this.get('full_name') || ''),
-                        email: (this.get('email') || ''),
-                        phone: (this.get('phone') || ''),
-                        address: (this.get('address') || '')
-                    },
-                    success: function (data) {
-                        $('span.false').html('');
-                        if (data.success === true) {
-                            if (method === 'update') {
-                                AB.router.navigate('list_contacts', {trigger: true});
-                            } else {
-                                $('form').get(0).reset();
-                            }
-                        } else {
-                            $.each(data.validationError, function () {
-                                $('span.' + this.target).html(this.error);
-                            });
-                        }
-                        $('span.success').html(data.msg).removeClass('false').addClass(data.success.toString());
-                    }
-                });
-            } else if (method === 'delete') {
-                var id = this.get('id');
-                return $.getJSON('../php/deleteContact.php', { id: id }, function (data) {
-                    if (data.success === true) {
-                        $('#contactsGrid tr[data-id="' + id + '"]').hide('slow');
-                    } else {
-                        alert(data.msg);
-                    }
-                });
+        fields: {
+            id: 'id',
+            full_name: 'full_name',
+            email: 'email',
+            phone: 'phone',
+            address: 'address'
+        },
+
+        defaults: {
+            id: null,
+            full_name: null,
+            email: null,
+            phone: null,
+            address: null
+        },
+
+        initialize : function () {
+            if (!_.all(this.fields, function (item, key) {
+                return _.contains(this.keys(), item);
+            }, this)) {
+            } else {
             }
+        },
+
+        getFullname : function () {
+            return this.get(this.fields.full_name);
+        },
+
+        getId : function () {
+            return this.get(this.fields.id);
+        },
+
+        getEmail : function () {
+            return this.get(this.fields.email);
+        },
+
+        getAddress : function () {
+            return this.get(this.fields.address);
+        },
+
+        getPhone : function () {
+            return this.get(this.fields.phone);
         }
     });
 });
