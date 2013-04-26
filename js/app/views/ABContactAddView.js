@@ -1,5 +1,5 @@
 define(['requirements'], function () {
-    AB.addView = Backbone.View.extend({
+    app.addView = Backbone.View.extend({
     el: 'div.abPanel',
 
     template: _.template($('#addContactTemplate').html()),
@@ -14,7 +14,7 @@ define(['requirements'], function () {
 
     addContactPage: function (id) {
         var contact = {},
-            model = AB.contactscollection.get(id);
+            model = app.contactscollection.get(id);
 
         if (id !== undefined && model !== undefined) {
             contact = model.toJSON();
@@ -28,7 +28,7 @@ define(['requirements'], function () {
         var phone = $('#phone').val();
         var address = $('#address').val();
 
-            var contactmodel = new AB.contactModel({
+            var contactmodel = new app.contactModel({
                 full_name: full_name,
                 email: email,
                 phone: phone,

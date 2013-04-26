@@ -1,5 +1,5 @@
 define(['requirements'], function () {
-    AB.listView = Backbone.View.extend({
+    app.listView = Backbone.View.extend({
         el: 'div.abPanel',
 
         template: _.template($('#listContactsTemplate').html()),
@@ -26,7 +26,7 @@ define(['requirements'], function () {
         listContactsPage: function (querystring) {
             var self = this;
 
-            AB.contactscollection.fetch({
+            app.contactscollection.fetch({
                 data: querystring,
                 success: function (collection, response) {
                     self.render(response);
@@ -36,12 +36,12 @@ define(['requirements'], function () {
 
         deleteContact: function (id) {
             if (confirm('Are you sure to delete?')) {
-                AB.contactscollection.get(id).destroy();
+                app.contactscollection.get(id).destroy();
             }
         },
 
         editContact: function (id) {
-            AB.router.navigate('edit_contact/' + id, {trigger: true});
+            app.router.navigate('edit_contact/' + id, {trigger: true});
         }
     });
 });

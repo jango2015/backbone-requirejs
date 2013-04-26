@@ -1,5 +1,5 @@
 define(['requirements'], function () {
-    AB.contactModel = Backbone.Model.extend({
+    app.contactModel = Backbone.Model.extend({
         fields: {
             id: 'id',
             full_name: 'full_name',

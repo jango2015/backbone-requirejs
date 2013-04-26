@@ -1,13 +1,13 @@
-define('AB', ['requirements', 'app/routers/ABRouter', 'app/models/ABContactModel',
+define('app', ['requirements', 'app/routers/ABRouter', 'app/models/ABContactModel',
         'app/views/ABContactAddView', 'app/views/ABContactListView',
         'app/views/ABContactSearchView', 'app/models/ABContactCollection',
         'app/routers/ABContact'], function () {
 
 });
 
-require(['AB'], function() {
+require(['app'], function() {
 
     $(function () {
-        AB.run();
+        app.run();
     });
 });

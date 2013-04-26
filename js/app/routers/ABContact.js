@@ -1,24 +1,24 @@
 define(['requirements'], function () {
-    AB.ContactController = Backbone.Router.extend({
+    app.controllers.ContactController = Backbone.Router.extend({
 
         routes: {
         },
 
         renderAddNewContactPage: function () {
-            AB.addview.addContactPage();
+            app.addview.addContactPage();
         },
 
         renderListContactsPage: function () {
-            AB.listview.setElement('div.abPanel');
-            AB.listview.listContactsPage();
+            app.listview.setElement('div.abPanel');
+            app.listview.listContactsPage();
         },
 
         renderSearchContactsPage: function () {
-            AB.searchview.searchContactsPage();
+            app.searchview.searchContactsPage();
         },
 
         renderEditContactPage: function (id) {
-            AB.addview.addContactPage(id);
+            app.addview.addContactPage(id);
         }
     });
 });
