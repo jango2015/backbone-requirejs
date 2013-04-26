@@ -1,6 +1,6 @@
 define(['requirements'], function () {
     app.contactsCollection = Backbone.Collection.extend({
-        model: app.contactModel,
+        model: app.models.ContactModel,
         url: '../php/listContacts.php'
     });
 });

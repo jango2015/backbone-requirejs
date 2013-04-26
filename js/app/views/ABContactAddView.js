@@ -28,7 +28,7 @@ define(['requirements'], function () {
         var phone = $('#phone').val();
         var address = $('#address').val();
 
-            var contactmodel = new app.contactModel({
+            var contactModel = new app.models.ContactModel({
                 full_name: full_name,
                 email: email,
                 phone: phone,
@@ -41,7 +41,7 @@ define(['requirements'], function () {
         } else {
             contactCollection = JSON.parse(contactCollection);
         }
-        contactCollection.push(contactmodel);
+        contactCollection.push(contactModel);
         localStorage['contacts'] = JSON.stringify(contactCollection);
         return false;
     }
