@@ -13,4 +13,5 @@ define(['libs/backbone', 'libs/jquery'], function () {
     app.controllers = {};
     app.models = {};
     app.views = {};
+    app.events = {};
 });

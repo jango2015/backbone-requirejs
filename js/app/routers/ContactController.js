@@ -3,7 +3,8 @@ define(['requirements'], function () {
         initialize : function () {
             this.view = new app.views.ContactAddView();
 
-            this.view.bind(this.view.EVENTS.submitForm,
+            var events = app.events.ContactAddEvents;
+            this.view.bind(events.submitForm,
                 $.proxy(this.addContact, this));
         },
 
@@ -23,12 +24,9 @@ define(['requirements'], function () {
                 phone: phone,
                 address: address
             });
-            //        contactmodel.save();
-            var contactCollection = localStorage['contacts'];
-            if (_.isUndefined(contactCollection)) {
-                contactCollection = [];
-            } else {
-                contactCollection = JSON.parse(contactCollection);
+            var contactCollection = [];
+            if (!_.isUndefined(localStorage['contacts'])) {
+                contactCollection = JSON.parse(localStorage['contacts']);
             }
             contactCollection.push(contactModel);
             localStorage['contacts'] = JSON.stringify(contactCollection);

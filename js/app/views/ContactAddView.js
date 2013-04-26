@@ -8,9 +8,7 @@ define(['requirements'], function () {
             'submit form#frmAddContact': 'addContact'
         },
 
-        EVENTS: {
-            submitForm: 'addcontact',
-        },
+
 
         initialize: function () {
             _.bindAll(this, 'render', 'addContact');
@@ -32,7 +30,8 @@ define(['requirements'], function () {
 //    },
 
         addContact: function (event) {
-            this.trigger(this.EVENTS.submitForm);
+            var events = app.events.ContactAddEvents;
+            this.trigger(events.submitForm);
         }
     });
 });
