@@ -1,9 +1,5 @@
 define(['requirements'], function () {
     app.controllers.ContactController = Backbone.Router.extend({
-
-        routes: {
-        },
-
         renderAddNewContactPage: function () {
             app.addview.addContactPage();
         },
