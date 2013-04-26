@@ -22,7 +22,7 @@ define(['requirements'], function () {
         },
 
         renderEditContactPage: function (id) {
-            app.addview.addContactPage(id);
+            app.addview.render(id);
         }
     });
 });
