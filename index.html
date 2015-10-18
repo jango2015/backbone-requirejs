@@ -3,15 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
     <title>Addressbook</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     <meta name="viewport" content="width=device-width">
-
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
@@ -28,7 +25,6 @@ Addressbook
         <div class='cell abPanel'>Loading... Please Wait.</div>
     </div>
 </div>
-
 
 <!-- addNewContact View starts here -->
 <script type='text/template' id='addContactTemplate'>
@@ -86,30 +82,13 @@ Addressbook
 </script>
 <!-- searchContacts View ends here -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
 <script data-main="js/index" src="js/libs/require.js"></script>
 <script>
     require.config({
         baseUrl: "js",
         paths: {
-//            "libs": "../libs"
         },
         waitSeconds: 15
-        //,
-//        shim: {
-//            'backbone': {
-//                deps: ['underscore', 'jquery'],
-//                exports: 'Backbone'
-//            },
-//            'underscore': {
-//                exports: '_'
-//            },
-//            'jquery': {
-//                deps: ['bar'],
-//                exports: 'Foo'
-//            }
-//        }
     });
 </script>
 </body>

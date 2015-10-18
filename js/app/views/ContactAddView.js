@@ -1,5 +1,5 @@
 define(['requirements'], function () {
-    app.views.ContactAddView = Backbone.View.extend({
+    app.views.ABContactAddView = Backbone.View.extend({
         el: 'div.abPanel',
 
         template: _.template($('#addContactTemplate').html()),

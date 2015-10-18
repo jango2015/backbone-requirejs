@@ -1,7 +1,7 @@
 define(['requirements'], function () {
     app.controllers.ContactController = Backbone.Router.extend({
         initialize : function () {
-            this.view = new app.views.ContactAddView();
+            this.view = new app.views.ABContactAddView();
 
             var events = app.events.ContactAddEvents;
             this.view.bind(events.submitForm,
