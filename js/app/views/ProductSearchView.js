@@ -19,11 +19,11 @@ define(['requirements'], function () {
         },
 
         searchContacts: function (event) {
-            var full_name = $('#full_name').val(),
-                email = $('#email').val();
+            var brand = $('#brand').val(),
+                color = $('#color').val();
 
             app.listview.setElement('#grid');
-            app.listview.listContactsPage({full_name: full_name, email: email});
+            app.listview.listContactsPage({brand: brand, color: color});
             return false;
         }
     });
