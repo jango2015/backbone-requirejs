@@ -15,18 +15,18 @@ define(['requirements'], function () {
         },
 
         render: function () {
-            var contact = {};
-            this.$el.html(this.template({contact: contact}));
+            var product = {};
+            this.$el.html(this.template({product: product}));
         },
 
 //    render: function (id) {
-//        var contact = {};
-//        var model = app.contactscollection.get(id);
+//        var product = {};
+//        var model = app.productscollection.get(id);
 //
 //        if (id !== undefined && model !== undefined) {
-//            contact = model.toJSON();
+//            product = model.toJSON();
 //        }
-//        this.$el.html(this.template({contact: contact}));
+//        this.$el.html(this.template({product: product}));
 //    },
 
         addContact: function (event) {

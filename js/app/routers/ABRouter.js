@@ -1,15 +1,15 @@
 define(['requirements'], function () {
     app.Router = Backbone.Router.extend({
         routes: {
-            'list_contacts': 	'renderListContactsPage',
-            'add_new_contact': 	'contactAddPage',
-            'search_contacts': 	'renderSearchContactsPage',
-            'edit_contact/:id': 'renderEditContactPage'
+            'list_products': 	'renderListContactsPage',
+            'add_new_product': 	'productAddPage',
+            'search_products': 	'renderSearchContactsPage',
+            'edit_product/:id': 'renderEditContactPage'
         },
 
-        contactAddPage : function () {
-            var contactController = new app.controllers.ContactController();
-            contactController.renderAddNewContactPage();
+        productAddPage : function () {
+            var productController = new app.controllers.ContactController();
+            productController.renderAddNewContactPage();
         },
 
         renderListContactsPage: function () {

@@ -3,10 +3,10 @@ define(['libs/backbone', 'libs/jquery'], function () {
         run: function () {
             this.listview = new this.listView();
             this.searchview = new this.searchView();
-            this.contactscollection = new app.contactsCollection();
+            this.productscollection = new app.productsCollection();
             this.router = new this.Router();
             Backbone.history.start();
-            this.router.navigate('add_new_contact', {trigger: true});
+            this.router.navigate('add_new_product', {trigger: true});
         }
     };
 

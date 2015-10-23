@@ -52,7 +52,7 @@ div.abPanel span.false {
     color: red;
 }
 div.abPanel div#grid { width: 100%; }
-table#contactsGrid a {
+table#productsGrid a {
     cursor: pointer;
     text-decoration: underline;
     color: blue;

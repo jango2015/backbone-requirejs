@@ -13,23 +13,23 @@ define(['requirements'], function () {
         },
 
         addContact: function () {
-            var full_name = $('#full_name').val();
-            var email = $('#email').val();
-            var phone = $('#phone').val();
-            var address = $('#address').val();
+            var brand = $('#brand').val();
+            var name = $('#name').val();
+            var color = $('#color').val();
+            var size = $('#size').val();
 
-            var contactModel = new app.models.ContactModel({
-                full_name: full_name,
-                email: email,
-                phone: phone,
-                address: address
+            var productModel = new app.models.ProductModel({
+                brand: brand,
+                name: name,
+                color: color,
+                size: size
             });
-            var contactCollection = [];
-            if (!_.isUndefined(localStorage['contacts'])) {
-                contactCollection = JSON.parse(localStorage['contacts']);
+            var productCollection = [];
+            if (!_.isUndefined(localStorage['products'])) {
+                productCollection = JSON.parse(localStorage['products']);
             }
-            contactCollection.push(contactModel);
-            localStorage['contacts'] = JSON.stringify(contactCollection);
+            productCollection.push(productModel);
+            localStorage['products'] = JSON.stringify(productCollection);
             return false;
         },
 

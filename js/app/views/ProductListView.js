@@ -11,8 +11,8 @@ define(['requirements'], function () {
         render: function (response) {
             var self = this;
 
-            this.$el.html(this.template({contacts: response}));
-            $('#contactsGrid tr[data-id]').each(function () {
+            this.$el.html(this.template({products: response}));
+            $('#productsGrid tr[data-id]').each(function () {
                 var id = $(this).attr('data-id');
                 $(this).find('a:first').click(function () {
                     self.editContact(id);
@@ -26,7 +26,7 @@ define(['requirements'], function () {
         listContactsPage: function (querystring) {
             var self = this;
 
-            app.contactscollection.fetch({
+            app.productscollection.fetch({
                 data: querystring,
                 success: function (collection, response) {
                     self.render(response);
@@ -36,12 +36,12 @@ define(['requirements'], function () {
 
         deleteContact: function (id) {
             if (confirm('Are you sure to delete?')) {
-                app.contactscollection.get(id).destroy();
+                app.productscollection.get(id).destroy();
             }
         },
 
         editContact: function (id) {
-            app.router.navigate('edit_contact/' + id, {trigger: true});
+            app.router.navigate('edit_product/' + id, {trigger: true});
         }
     });
 });

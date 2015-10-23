@@ -13,15 +13,13 @@
     <script src="js/libs/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
-<header>
-Addressbook
-</header>
+<header>Online Shop</header>
 <div class='table abWrapper'>
     <div class='row'>
         <div class='cell abLinks'>
-            <a href='#add_new_contact'>Add New Contact</a><br />
-            <a href='#list_contacts'>List all Contacts</a><br />
-            <a href='#search_contacts'>Search any Contact</a><br />
+            <a href='#add_new_product'>Add New Product</a><br />
+            <a href='#list_products'>List all Products</a><br />
+            <a href='#search_products'>Search any Product</a><br />
         </div>
         <div class='cell abPanel'>Loading... Please Wait.</div>
     </div>
@@ -29,39 +27,39 @@ Addressbook
 
 <!-- addNewContact View starts here -->
 <script type='text/template' id='addContactTemplate'>
-    <h2><%= $.isEmptyObject(contact) ? 'Add' : 'Edit'%> New Contact</h2>
+    <h2><%= $.isEmptyObject(product) ? 'Add' : 'Edit'%> New Product</h2>
     <form id='frmAddContact'>
-        <div>Full Name:</div> <input type='text' id='full_name' class='input' value="<%= !$.isEmptyObject(contact) ? contact.full_name : '' %>" /> <span class='false full_name_error'></span><br />
-        <div>Email Id:</div> <input type='text' id='email' class='input' value="<%= !$.isEmptyObject(contact) ? contact.email : '' %>" />  <span class='false email_error'></span><br />
-        <div>Phone:</div> <input type='text' id='phone' class='input' value="<%= !$.isEmptyObject(contact) ? contact.phone : '' %>" />  <span class='false phone_error'></span><br />
-        <div>Address:</div> <textarea id='address' class='textarea'><%= !$.isEmptyObject(contact) ? contact.address : '' %></textarea> <br /><br />		
-        <input type='submit' value='<%= $.isEmptyObject(contact) ? 'Save' : 'Update'%> Contact Details' class='button' />
+        <div>Brand:</div> <input type='text' id='brand' class='input' value="<%= !$.isEmptyObject(product) ? product.brand : '' %>" /> <span class='false brand_error'></span><br />
+        <div>Name:</div> <input type='text' id='name' class='input' value="<%= !$.isEmptyObject(product) ? product.name : '' %>" />  <span class='false name_error'></span><br />
+        <div>Color:</div> <input type='text' id='color' class='input' value="<%= !$.isEmptyObject(product) ? product.color : '' %>" />  <span class='false color_error'></span><br />
+        <div>Size:</div> <textarea id='size' class='textarea'><%= !$.isEmptyObject(product) ? product.size : '' %></textarea> <br /><br />
+        <input type='submit' value='<%= $.isEmptyObject(product) ? 'Save' : 'Update'%> Product Details' class='button' />
         <span class='success'></span>
-        <input type='hidden' id='id' class='input' value="<%= !$.isEmptyObject(contact) ? contact.id : '' %>"/>
+        <input type='hidden' id='id' class='input' value="<%= !$.isEmptyObject(product) ? product.id : '' %>"/>
     </form>
 </script>
 <!-- addNewContact View ends here -->
 
 <!-- listContacts View starts here -->
 <script type='text/template' id='listContactsTemplate'>
-    <h2>List Contacts</h2>
-    <table id='contactsGrid' width='100%' border='1' cellspacing='1' cellpadding='5'>
+    <h2>List Products</h2>
+    <table id='productsGrid' width='100%' border='1' cellspacing='1' cellpadding='5'>
         <tr>
-            <td width='25%'><b>Full Name</b></td>
-            <td width='25%'><b>Email ID</b></td>
-            <td width='15%'><b>Phone</b></td>
-            <td width='25%'><b>Address</b></td>
+            <td width='25%'><b>Brand</b></td>
+            <td width='25%'><b>Color ID</b></td>
+            <td width='15%'><b>Name</b></td>
+            <td width='25%'><b>Size</b></td>
             <td width='10%' align='center'><b>Action</b></td>
         </tr>
-        <%	if ($.isEmptyObject(contacts)) { %>
+        <%	if ($.isEmptyObject(products)) { %>
             <tr><td colspan='5'>No Record Found</td></tr>
         <% 	} else { 
-            $.each(contacts, function () { %>
+            $.each(products, function () { %>
             <tr data-id=<%= this.id%>>
-                <td><%= this.full_name%></td>
-                <td><%= this.email %></td>
-                <td><%= this.phone %></td>
-                <td><%= this.address %></td>
+                <td><%= this.brand %></td>
+                <td><%= this.color %></td>
+                <td><%= this.name %></td>
+                <td><%= this.size %></td>
                 <td align='center'><a>Edit</a> | <a>Delete</a></td>
             </tr>
             <% 		
@@ -73,11 +71,11 @@ Addressbook
 
 <!-- searchContacts View starts here -->
 <script type='text/template' id='searchContactsTemplate'>
-    <h2>Search Contacts</h2>
+    <h2>Search Products</h2>
     <form id='frmSearchContacts'>
-        <div>Name:</div> <input type='text' id='full_name' class='input' /> <br />
-        <div>Email Id:</div> <input type='text' id='email' class='input' /> <br />
-        <input type='submit' value='Search Contact' class='button' />
+        <div>Name:</div> <input type='text' id='brand' class='input' /> <br />
+        <div>Color Id:</div> <input type='text' id='color' class='input' /> <br />
+        <input type='submit' value='Search Product' class='button' />
     </form>
     <div id='grid'></div>
 </script>
