@@ -1,18 +1,18 @@
 define(['requirements'], function () {
-    app.controllers.ContactController = Backbone.Router.extend({
+    app.controllers.ProductController = Backbone.Router.extend({
         initialize : function () {
-            this.view = new app.views.ABContactAddView();
+            this.view = new app.views.ABProductAddView();
 
-            var events = app.events.ContactAddEvents;
+            var events = app.events.ProductAddEvents;
             this.view.bind(events.submitForm,
-                $.proxy(this.addContact, this));
+                $.proxy(this.addProduct, this));
         },
 
-        renderAddNewContactPage: function () {
+        renderAddNewProductPage: function () {
             this.view.render();
         },
 
-        addContact: function () {
+        addProduct: function () {
             var brand = $('#brand').val();
             var name = $('#name').val();
             var color = $('#color').val();
@@ -33,16 +33,16 @@ define(['requirements'], function () {
             return false;
         },
 
-        renderListContactsPage: function () {
+        renderListProductsPage: function () {
             app.listview.setElement('div.abPanel');
-            app.listview.listContactsPage();
+            app.listview.listProductsPage();
         },
 
-        renderSearchContactsPage: function () {
-            app.searchview.searchContactsPage();
+        renderSearchProductsPage: function () {
+            app.searchview.searchProductsPage();
         },
 
-        renderEditContactPage: function (id) {
+        renderEditProductPage: function (id) {
             app.addview.render(id);
         }
     });

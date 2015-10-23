@@ -1,5 +1,5 @@
 define(['requirements'], function () {
-    app.events.ContactAddEvents = {
+    app.events.ProductAddEvents = {
         submitForm: 'addproduct'
     }
 });

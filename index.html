@@ -25,10 +25,10 @@
     </div>
 </div>
 
-<!-- addNewContact View starts here -->
-<script type='text/template' id='addContactTemplate'>
+<!-- addNewProduct View starts here -->
+<script type='text/template' id='addProductTemplate'>
     <h2><%= $.isEmptyObject(product) ? 'Add' : 'Edit'%> New Product</h2>
-    <form id='frmAddContact'>
+    <form id='frmAddProduct'>
         <div>Brand:</div> <input type='text' id='brand' class='input' value="<%= !$.isEmptyObject(product) ? product.brand : '' %>" /> <span class='false brand_error'></span><br />
         <div>Name:</div> <input type='text' id='name' class='input' value="<%= !$.isEmptyObject(product) ? product.name : '' %>" />  <span class='false name_error'></span><br />
         <div>Color:</div> <input type='text' id='color' class='input' value="<%= !$.isEmptyObject(product) ? product.color : '' %>" />  <span class='false color_error'></span><br />
@@ -38,10 +38,10 @@
         <input type='hidden' id='id' class='input' value="<%= !$.isEmptyObject(product) ? product.id : '' %>"/>
     </form>
 </script>
-<!-- addNewContact View ends here -->
+<!-- addNewProduct View ends here -->
 
-<!-- listContacts View starts here -->
-<script type='text/template' id='listContactsTemplate'>
+<!-- listProducts View starts here -->
+<script type='text/template' id='listProductsTemplate'>
     <h2>List Products</h2>
     <table id='productsGrid' width='100%' border='1' cellspacing='1' cellpadding='5'>
         <tr>
@@ -67,19 +67,19 @@
         }%>
     </table>
 </script>
-<!-- listContacts View ends here -->
+<!-- listProducts View ends here -->
 
-<!-- searchContacts View starts here -->
-<script type='text/template' id='searchContactsTemplate'>
+<!-- searchProducts View starts here -->
+<script type='text/template' id='searchProductsTemplate'>
     <h2>Search Products</h2>
-    <form id='frmSearchContacts'>
+    <form id='frmSearchProducts'>
         <div>Name:</div> <input type='text' id='brand' class='input' /> <br />
         <div>Color Id:</div> <input type='text' id='color' class='input' /> <br />
         <input type='submit' value='Search Product' class='button' />
     </form>
     <div id='grid'></div>
 </script>
-<!-- searchContacts View ends here -->
+<!-- searchProducts View ends here -->
 
 <script data-main="js/index" src="js/libs/require.js"></script>
 <script>

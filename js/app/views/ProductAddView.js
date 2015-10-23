@@ -1,17 +1,17 @@
 define(['requirements'], function () {
-    app.views.ABContactAddView = Backbone.View.extend({
+    app.views.ABProductAddView = Backbone.View.extend({
         el: 'div.abPanel',
 
-        template: _.template($('#addContactTemplate').html()),
+        template: _.template($('#addProductTemplate').html()),
 
         events: {
-            'submit form#frmAddContact': 'addContact'
+            'submit form#frmAddProduct': 'addProduct'
         },
 
 
 
         initialize: function () {
-            _.bindAll(this, 'render', 'addContact');
+            _.bindAll(this, 'render', 'addProduct');
         },
 
         render: function () {
@@ -29,8 +29,8 @@ define(['requirements'], function () {
 //        this.$el.html(this.template({product: product}));
 //    },
 
-        addContact: function (event) {
-            var events = app.events.ContactAddEvents;
+        addProduct: function (event) {
+            var events = app.events.ProductAddEvents;
             this.trigger(events.submitForm);
         }
     });

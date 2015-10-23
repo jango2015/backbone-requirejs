@@ -1,27 +1,27 @@
 define(['requirements'], function () {
     app.Router = Backbone.Router.extend({
         routes: {
-            'list_products': 	'renderListContactsPage',
+            'list_products': 	'renderListProductsPage',
             'add_new_product': 	'productAddPage',
-            'search_products': 	'renderSearchContactsPage',
-            'edit_product/:id': 'renderEditContactPage'
+            'search_products': 	'renderSearchProductsPage',
+            'edit_product/:id': 'renderEditProductPage'
         },
 
         productAddPage : function () {
-            var productController = new app.controllers.ContactController();
-            productController.renderAddNewContactPage();
+            var productController = new app.controllers.ProductController();
+            productController.renderAddNewProductPage();
         },
 
-        renderListContactsPage: function () {
+        renderListProductsPage: function () {
             app.listview.setElement('div.abPanel');
-            app.listview.listContactsPage();
+            app.listview.listProductsPage();
         },
 
-        renderSearchContactsPage: function () {
-            app.searchview.searchContactsPage();
+        renderSearchProductsPage: function () {
+            app.searchview.searchProductsPage();
         },
 
-        renderEditContactPage: function (id) {
+        renderEditProductPage: function (id) {
             app.addview.render(id);
         }
     });
