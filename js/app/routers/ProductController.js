@@ -12,25 +12,21 @@ define(['requirements'], function () {
             this.view.render();
         },
 
-        addProduct: function () {
-            var brand = $('#brand').val();
-            var name = $('#name').val();
-            var color = $('#color').val();
-            var size = $('#size').val();
-
+        addProduct: function (options) {
             var productModel = new app.models.ProductModel({
-                brand: brand,
-                name: name,
-                color: color,
-                size: size
+                brand: options.brand,
+                name: options.name,
+                color: options.color,
+                size: options.size
             });
-            var productCollection = [];
-            if (!_.isUndefined(localStorage['products'])) {
-                productCollection = JSON.parse(localStorage['products']);
-            }
-            productCollection.push(productModel);
-            localStorage['products'] = JSON.stringify(productCollection);
-            return false;
+            //var productCollection = [];
+            //if (!_.isUndefined(localStorage['products'])) {
+            //    productCollection = JSON.parse(localStorage['products']);
+            //}
+            //productCollection.push(productModel);
+            //localStorage['products'] = JSON.stringify(productCollection);
+            //return false;
+            productModel.save();
         },
 
         renderListProductsPage: function () {

@@ -1,5 +1,7 @@
 define(['requirements'], function () {
     app.models.ProductModel = Backbone.Model.extend({
+        urlRoot: '/products',
+        
         fields: {
             id: 'id',
             brand: 'brand',

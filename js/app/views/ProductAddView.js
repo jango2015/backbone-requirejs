@@ -30,8 +30,18 @@ define(['requirements'], function () {
 //    },
 
         addProduct: function (event) {
-            var events = app.events.ProductAddEvents;
-            this.trigger(events.submitForm);
+            var productForm = this.$el.find('#frmAddProduct');
+            var productFormSerialized = productForm.serialize();
+            this.trigger(
+                app.events.ProductAddEvents.submitForm,
+                {
+                    productForm: productFormSerialized,
+                    brand: this.$el.find('#brand').val(),
+                    name: this.$el.find('#name').val(),
+                    color: this.$el.find('#color').val(),
+                    size: this.$el.find('#size').val()
+                }
+            );
         }
     });
 });
