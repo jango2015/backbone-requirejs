@@ -1,6 +1,6 @@
 define(['requirements'], function () {
-    app.productsCollection = Backbone.Collection.extend({
+    app.ProductsCollection = Backbone.Collection.extend({
         model: app.models.ProductModel,
-        url: '../php/listProducts.php'
+        url: 'http://products.local:8080/products/'
     });
 });

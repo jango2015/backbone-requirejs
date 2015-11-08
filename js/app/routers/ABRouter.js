@@ -13,8 +13,8 @@ define(['requirements'], function () {
         },
 
         renderListProductsPage: function () {
-            app.listview.setElement('div.abPanel');
-            app.listview.listProductsPage();
+            var controller = new app.controllers.ProductController();
+            controller.renderListProductsPage();
         },
 
         renderSearchProductsPage: function () {

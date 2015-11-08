@@ -30,6 +30,9 @@ define(['requirements'], function () {
                 data: querystring,
                 success: function (collection, response) {
                     self.render(response);
+                },
+                error : function (collection, response) {
+                    self.render(response)
                 }
             });
         },
