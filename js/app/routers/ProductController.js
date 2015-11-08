@@ -13,20 +13,6 @@ define(['requirements'], function () {
         },
 
         addProduct: function (options) {
-            var productModel = new app.models.ProductModel({
-                brand: options.brand,
-                name: options.name,
-                color: options.color,
-                size: options.size
-            });
-            //var productCollection = [];
-            //if (!_.isUndefined(localStorage['products'])) {
-            //    productCollection = JSON.parse(localStorage['products']);
-            //}
-            //productCollection.push(productModel);
-            //localStorage['products'] = JSON.stringify(productCollection);
-            //return false;
-            productModel.save();
         },
 
         renderListProductsPage: function () {
